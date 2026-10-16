@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Directorio de Contactos">
+  <title>Directorio de Contactos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">DC</span>
+      <span>Directorio<span class="brand-light"> de Contactos</span></span>
+    </a>
+    <span class="status">
+      <span class="status-dot"></span>
+      <span id="connectionStatus">Modo de prueba</span>
+    </span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <p class="eyebrow">GESTIÓN DE INFORMACIÓN</p>
+      <h1>Directorio de Contactos</h1>
+      <p class="subtitle">
+        Consulta y administra los contactos de tu organización.
+      </p>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span class="stat-label">Contactos registrados</span>
+        <strong id="totalContacts">0</strong>
+        <span class="stat-note">Registros disponibles</span>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Categorías</span>
+        <strong id="totalCategories">0</strong>
+        <span class="stat-note">Tipos de contacto</span>
+      </article>
+    </section>
+
+    <section class="directory">
+      <div class="directory-heading">
+        <div>
+          <h2>Contactos</h2>
+          <p>Busca y consulta los registros del directorio.</p>
+        </div>
+        <button id="reloadBtn" class="button button-secondary" type="button">
+          ↻ Actualizar
+        </button>
+      </div>
+
+      <div class="filters">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search"
+                 placeholder="Buscar por nombre, correo o teléfono..."
+                 aria-label="Buscar contactos">
+        </label>
+
+        <label class="category-filter">
+          <span class="sr-only">Filtrar por categoría</span>
+          <select id="categoryFilter">
+            <option value="">Todas las categorías</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="notice" class="notice" role="status" hidden></div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Contacto</th>
+              <th>Teléfono</th>
+              <th>Correo electrónico</th>
+              <th>Categoría</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="contactsBody">
+            <tr>
+              <td colspan="5" class="empty-state">Cargando contactos...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <span id="resultsCount">0 contactos</span>
+        <span>Directorio de Contactos · AWS</span>
+      </div>
+    </section>
+
+    <footer>
+      Proyecto académico · Frontend HTML, CSS y JavaScript
+    </footer>
+  </main>
+</body>
+</html>
